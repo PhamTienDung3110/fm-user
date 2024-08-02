@@ -72,19 +72,18 @@ function Debt() {
     <span className="cus-box-1">
       <CusText bold>Vay/Nợ:</CusText>
       {listData.map((ele) => (
-        <>
+        <div key={ele.id}>
           <Divider className="my-2" />
-          <div className="flex justify-between" key={ele.id}>
+          <div className="flex justify-between">
             <p>{ele.name}</p>
             <div className="flex">
-              {/* <p className="w-10">{Utils.extractDayFromDate(ele.time)}</p> */}
               <p>{ele.detail}</p>
             </div>
             <CusText bold red>
               -{Utils.formatCurrency(ele.cost)}
             </CusText>
           </div>
-        </>
+        </div>
       ))}
     </span>
   );

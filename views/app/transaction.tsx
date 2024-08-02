@@ -143,9 +143,9 @@ function Transaction() {
       </div>
       <div>
         {dataTransaction.map((ele) => (
-          <>
+          <div key={ele.id}>
             <Divider className="my-2" />
-            <div className="flex justify-between" key={ele.id}>
+            <div className="flex justify-between">
               <div className="flex">
                 <p className="w-10">{Utils.extractDayFromDate(ele.time)}</p>
                 <p>{ele.category}</p>
@@ -154,7 +154,7 @@ function Transaction() {
                 -{Utils.formatCurrency(ele.cost)}
               </CusText>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </div>
